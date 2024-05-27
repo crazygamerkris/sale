@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Paintings</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('m/body.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background: url('m/body.jpg');
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.8); /* Light background for the main content */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .painting {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            width: calc(33% - 20px); /* Three columns layout */
+            max-width: 300px;
+            margin: 10px;
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        .painting img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .painting:hover {
+            transform: translateY(-10px);
+        }
+
+        .painting-details {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .painting-details h2 {
+            margin: 10px 0;
+            font-size: 22px;
+            color: #444;
+        }
+
+        .painting-details p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #666;
+        }
+
+        footer {
+            background: url('m/body.jpg');
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .insta {
+            width: 40px;
+            height: 37px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="m">
+            <h1>Artistic Feel</h1>
+            <p>Artistic Feel is a website to sell</p>
+            <p>handmade paintings in Sohar, Oman</p>
+            <p>Pickup only in Sohar, Oman</p>
+        </div>
+    </header>
+    <main>
+        <section class="gallery" id="gallery">
+            <!-- Paintings will be dynamically added here -->
+            <a href="painting_details1.html" class="painting">
+                <img src="m/k.png" alt="Flower">
+                <div class="painting-details">
+                    <h2>Flower</h2>
+                    <p>Description: Hi</p>
+                    <p>Price: 1 OMR</p>
+                </div>
+            </a>
+        </section>
+    </main>
+    <footer>
+        <a href="https://www.instagram.com/kris_edwar3/"><img src="m/n.png" alt="my instagram" class="insta"></a>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

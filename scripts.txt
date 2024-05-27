@@ -1,0 +1,32 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const paintings = [
+        {
+            title: 'Sunset Over the Ocean',
+            price: '50 OMR',
+            imageUrl: 'images/sunset.jpg'
+        },
+        {
+            title: 'Mountain View',
+            price: '75 OMR',
+            imageUrl: 'images/mountain.jpg'
+        },
+        // Add more paintings here
+    ];
+
+    const gallery = document.getElementById('gallery');
+
+    paintings.forEach(painting => {
+        const paintingElement = document.createElement('div');
+        paintingElement.classList.add('painting');
+
+        paintingElement.innerHTML = `
+            <img src="${painting.imageUrl}" alt="${painting.title}">
+            <div class="painting-details">
+                <h2>${painting.title}</h2>
+                <p>Price: ${painting.price}</p>
+            </div>
+        `;
+
+        gallery.appendChild(paintingElement);
+    });
+});

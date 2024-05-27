@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painting Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="painting-details">
+        <h2 id="painting-name"></h2>
+        <p id="painting-description"></p>
+        <p id="painting-price"></p>
+    </div>
+
+    <script>
+        // Get parameters from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const description = urlParams.get('description');
+        const price = urlParams.get('price');
+
+        // Set painting details
+        document.getElementById('painting-name').innerText = name;
+        document.getElementById('painting-description').innerText = 'Description: ' + description;
+        document.getElementById('painting-price').innerText = 'Price: ' + price;
+    </script>
+</body>
+</html>
