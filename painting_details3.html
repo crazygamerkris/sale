@@ -4,26 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painting Details</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styls.css">
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url(m/kl.jpg);
+            margin: 0;
+            padding: 0;
+            color: aquamarine;
+            text-align: center; /* Center align all text */
+        }
+
+        .painting-details {
+            padding: 50px;
+            color: aquamarine;
+            border: 100px;
+        }
+        .whatsapp-button {
+            display: inline-block;
+            background-color: #25D366; /* WhatsApp green */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #26974e; /* Darker green on hover */
+        }
+
+        img {
+            width: 300px; /* Set the desired width */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Add rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+            transition: transform 0.3s ease; /* Add smooth transition */
+            margin: 20px auto; /* Center the image and add margin */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        img:hover {
+            transform: scale(1.1); /* Scale up on hover */
+        }
+
+        h2, p {
+            margin: 10px 0;
+            font-size: 24px; /* Increase font size */
+            color: aquamarine; /* Change text color to aquamarine */
+        }
+    </style>
 </head>
 <body>
     <div class="painting-details">
-        <h2 id="painting-name"></h2>
-        <p id="painting-description"></p>
-        <p id="painting-price"></p>
+        <img src="m/p2.JPG" alt="Flower" onclick="toggleFullscreen(this)">
+        <h2>peacfull night:small size</h2>
+        <p>discreption: peacfull night is a handmade painting that add peace to any room</p>
+           <p>you add it in and take any bland wall to another level press on the painting to buy</p>
+        <p>Price: 0.6 OMR</p>
+        <P>press on the picture above to fullscreen👆👆</P>
+        <a href="https://wa.me/96891158363" class="whatsapp-button">click this button to talk to me on whatsapp to buy</a>
     </div>
 
     <script>
-        // Get parameters from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const name = urlParams.get('name');
-        const description = urlParams.get('description');
-        const price = urlParams.get('price');
-
-        // Set painting details
-        document.getElementById('painting-name').innerText = name;
-        document.getElementById('painting-description').innerText = 'Description: ' + description;
-        document.getElementById('painting-price').innerText = 'Price: ' + price;
+        function toggleFullscreen(element) {
+            if (!document.fullscreenElement) {
+                element.requestFullscreen().catch(err => {
+                    alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
     </script>
 </body>
 </html>
