@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const paintings = [
-       
-    ];
-
+    const paintings = {
+        
+    }
     const gallery = document.getElementById('gallery');
 
     paintings.forEach(painting => {
