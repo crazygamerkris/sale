@@ -17,7 +17,7 @@
         }
 
         header {
-            background: url('m/body.jpg');
+            background-image: url('m/body.jpg');
             color: white;
             padding: 20px;
             text-align: center;
@@ -35,12 +35,14 @@
         }
 
         main {
-            padding: 20px;
+            padding: 5px;
             max-width: 1200px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.8); /* Light background for the main content */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-height: calc(100vh - 100px); /* Ensure the main takes up at least full viewport height minus header and footer */
+            box-sizing: border-box; /* Include padding in height calculation */
         }
 
         .gallery {
@@ -91,19 +93,108 @@
         }
 
         footer {
-            background: url('m/body.jpg');
+            background-image: url('m/body.jpg');
             color: white;
             text-align: center;
             padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .insta {
             width: 40px;
             height: 37px;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            background-color: #25D366; /* WhatsApp green */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1EBE57; /* Darker green on hover */
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            .gallery {
+                gap: 10px;
+                padding: 10px;
+            }
+
+            .painting {
+                width: calc(50% - 10px); /* Two columns layout on tablets and phones */
+                max-width: none;
+                margin: 5px;
+            }
+
+            .painting-details h2 {
+                font-size: 20px;
+            }
+
+            .painting-details p {
+                font-size: 16px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            header p {
+                font-size: 14px;
+            }
+
+            .painting {
+                width: 100%; /* Single column layout on small phones */
+                margin: 5px 0;
+            }
+
+            .painting-details h2 {
+                font-size: 18px;
+            }
+
+            .painting-details p {
+                font-size: 14px;
+            }
+
+            .whatsapp-button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .insta {
+                width: 30px;
+                height: 27px;
+            }
         }
     </style>
 </head>
@@ -119,18 +210,20 @@
     <main>
         <section class="gallery" id="gallery">
             <!-- Paintings will be dynamically added here -->
-            <a href="painting_details1.html" class="painting">
-                <img src="m/k.png" alt="Flower">
-                <div class="painting-details">
-                    <h2>Flower</h2>
-                    <p>Description: Hi</p>
-                    <p>Price: 1 OMR</p>
-                </div>
-            </a>
+           <a href="painting_details1.html" class="painting">
+           <img src="m/p1.JPG" alt="p1">
+           <div class="painting-details">
+            <h2>flower</h2>
+            <p>p</p>
+            <p>p</p>
+           </div>
+           </a>
+          
         </section>
     </main>
     <footer>
         <a href="https://www.instagram.com/kris_edwar3/"><img src="m/n.png" alt="my instagram" class="insta"></a>
+        <a href="https://wa.me/96891158363" class="whatsapp-button">Chat on WhatsApp</a>
     </footer>
 
     <script src="scripts.js"></script>
